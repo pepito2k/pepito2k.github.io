@@ -9,7 +9,7 @@ Just about one year ago, I wanted to check if there was any tool that can show s
 
 The thing was the only thing I found was a gist from a guy named Tobin Harris which can be [seen here](https://gist.github.com/tobinharris/396634). And I never created a ruby gem before so the idea of porting that to a gem was cool.
 
-After following a few simple steps detailed on rubygems.org website, I had the first version of Gitalytics working and published to the world.
+After following a few simple steps detailed on rubygems.org website, I had the first version of [Gitalytics](http://gonzalo.robaina.me/gitalytics) working and published to the world.
 
 Some time after that, I received my first Pull Request, I felt so excited I can't just explain here with words. I received the first colaboration on my first open-source project. Somebody took the time to actually read my code, write a fix and send me a pull request. WOW!
 
