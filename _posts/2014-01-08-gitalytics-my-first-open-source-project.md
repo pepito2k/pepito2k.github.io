@@ -3,6 +3,7 @@ layout: post
 title:  "Gitalytics, my first open source project"
 date:   2014-01-08 00:33:31
 tags: gitalytics open-source
+share: true
 ---
 
 Just about one year ago, I wanted to check if there was any tool that can show some statistics from a git repository, just for fun, the idea of having a resume of my git log with some charts was a great one for me.

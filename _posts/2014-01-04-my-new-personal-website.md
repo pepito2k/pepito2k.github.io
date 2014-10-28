@@ -5,6 +5,7 @@ date:   2014-01-04 20:33:31
 tags: personal announcement
 comments: true
 share: true
+share: true
 ---
 
 Hi, thank you for stopping by my new website.
