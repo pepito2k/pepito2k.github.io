@@ -1,3 +1,47 @@
-name: Gonzalo Robaina
-markdown: redcarpet
-pygments: true
+title:            Gonzalo Robaina
+description:      My personal website
+disqus_shortname: gonzalorobaina
+# Your site's domain goes here. When working locally use localhost server leave blank
+# PS. If you set this wrong stylesheets and scripts won't load and most links will break.
+# PPS. If you leave it blank for local testing home links won't work, they'll be fine for live domains though.
+url:              http://localhost:4000
+
+# Owner/author information
+owner:
+  name:           Gonzalo Robaina
+  avatar:         avatar.jpg
+  bio:            "Web applications developer, frontender, rubyist, just another geek in the web."
+  email:          gonzalo@robaina.me
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:        gonzalorobaina
+  facebook:       gonzalorobaina
+  github:         pepito2k
+  stackexchange:
+  linkedin:       gonzalorobaina
+  instagram:      pepito2k
+  flickr:         gonzalo-robaina
+  tumblr:
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus:    https://plus.google.com/+GonzaloRobaina/
+
+# Analytics and webmaster tools stuff goes here
+google_analytics:
+google_verify:
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+
+# Links to include in top navigation
+# For external links add external: true
+links:
+  - title: Contenidos en Linea
+    url: http://contenidosenlinea.com
+    external: true
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    America/Montevideo
+future:      true
+pygments:    true
+markdown:    redcarpet
+
+# Amount of posts to show on home page
+paginate: 5
