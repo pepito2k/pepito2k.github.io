@@ -7,6 +7,7 @@ image:
   feature: jsconfuy.jpg
   credit: pricco
   creditlink: http://twitter.com/pricco
+comments: true
 share: true
 ---
 

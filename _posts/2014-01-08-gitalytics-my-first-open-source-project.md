@@ -3,6 +3,7 @@ layout: post
 title:  "Gitalytics, my first open source project"
 date:   2014-01-08 00:33:31
 tags: gitalytics open-source
+comments: true
 share: true
 ---
 
