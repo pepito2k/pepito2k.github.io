@@ -1,59 +1,366 @@
 ---
-layout: post-index
+layout: default
 title: Latest Posts
 description: "Describe this nonsense."
 tags: [Jekyll, theme, themes, responsive, blog, modern]
-image:
-  feature: splash.jpg
 ---
 
-{% for post in paginator.posts %}
-<article class="hentry">
-  <header>
-    <div class="entry-meta"><span class="entry-date date published updated"><time datetime="{{ post.date | date_to_xmlschema }}"><a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%B %d, %Y" }}</a></time></span><span class="author vcard"><span class="fn"><a href="{{ site.url }}/about/" title="About {{ site.owner.name }}">{{ site.owner.name }}</a></span></span>{% if site.disqus_shortname and post.comments %}&nbsp; &bull; &nbsp;<span class="entry-comments"><a href="{{ site.url }}{{ post.url }}#disqus_thread">Comment</a></span>{% endif %}</div><!-- /.entry-meta -->
-    {% if post.link %}
-      <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}"><i class="icon-double-angle-right"></i></a> <a href="{{ post.link }}">{{ post.title }}</a></h1>
-    {% else %}
-      <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a></h1>
-    {% endif %}
-  </header>
-  <div class="entry-content">
-    {{ post.content }}
-  </div><!-- /.entry-content -->
-</article><!-- /.hentry -->
-{% endfor %}
+<!--=== PAGE PRELOADER ===-->
+<div id="page-loader"><span class="page-loader-gif"></span></div>
 
-<div class="pagination">
-  {% if paginator.previous_page %}
-    {% if paginator.previous_page == 1 %}
-      <a href="{{ site.url }}" class="btn">Previous</a>
-    {% else %}
-      <a href="{{ site.url }}/page{{ paginator.previous_page }}" class="btn">Previous</a>
-    {% endif %}
-  {% else %}
-    Previous
-  {% endif %}
-  <ul class="inline-list">
-    <li>
-      {% if paginator.page == 1 %}
-        <span class="current-page">1</span>
-      {% else %}
-        <a href="{{ site.url }}">1</a>
-      {% endif %}
-    </li>
-    {% for count in (2..paginator.total_pages) %}
-      <li>
-        {% if count == paginator.page %}
-          <span class="current-page">{{ count }}</span>
-        {% else %}
-          <a href="{{ site.url }}/page{{ count }}">{{ count }}</a>
-        {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
-  {% if paginator.next_page %}
-    <a href="{{ site.url }}/page{{ paginator.next_page }}" class="btn">Next</a>
-  {% else %}
-    Next
-  {% endif %}
-</div><!-- /.pagination -->
+<!-- ==============================================
+MAIN NAV
+=============================================== -->
+<div id="main-nav" class="navbar navbar-fixed-top">
+	<div class="container">
+
+		<div class="navbar-header">
+
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#site-nav">
+				<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+			</button>
+
+			<!-- ======= LOGO ========-->
+			<a class="navbar-brand scrollto" href="#home">{{ site.title }}<br><span>{{ site.description }}</span></a>
+			<!-- <a class="navbar-brand scrollto ir-logo" href="#">{{ site.title }}<br><span>{{ site.description }}</span></a> -->
+
+		</div>
+
+		<div id="site-nav" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="sr-only">
+					<a href="#home" class="scrollto">Home</a>
+				</li>
+				<li>
+					<a href="#services" class="scrollto">What I do</a>
+				</li>
+				<li>
+					<a href="#about" class="scrollto">About Me</a>
+				</li>
+				<li>
+					<a href="#portfolio" class="scrollto">My Works</a>
+				</li>
+				<li>
+					<a href="#contact" class="scrollto">Contact Me</a>
+				</li>
+			</ul>
+		</div><!--End navbar-collapse -->
+
+	</div><!--End container -->
+
+</div><!--End main-nav -->
+
+<!-- ==============================================
+HEADER
+=============================================== -->
+<header id="home" class="jumbotron">
+
+	<div class="container">
+
+		<div class="message-box clearfix">
+
+			<div class="left-col">
+				<p>I am <span>Gonzalo</span><br/>and I'm a web</p>
+			</div>
+
+			<div class="right-col flexslider home-slider" style="z-index:1;">
+
+				<ul class="slides">
+
+					<li><p>Developer</p></li>
+
+					<li><p>Crafter</p></li>
+
+					<li><p>Maker</p></li>
+
+				</ul>
+
+			</div><!--End home-slider -->
+
+		</div><!--End message-box -->
+
+	</div><!--End container -->
+
+</header><!--End header -->
+
+<!-- ==============================================
+SERVICES
+=============================================== -->
+<section id="services">
+
+	<div class="container">
+
+		<h1 class="section-title scrollimation scale-in">The <span>Services</span> I offer<i class="fa fa-wrench"></i></h1>
+
+		<div class="row services scrollimation fade-left">
+			<div class="col-md-3 text-center">
+				<a href="#service" class="icon"><i class="fa fa-flag"></i></a>
+				<h2>Analysis</h2>
+			</div>
+			<div class="col-md-3 details">
+				<p>If you have an idea but you are not comfortable enough with it, I can help you analyze it. My experience as a Full-Stack developer can help you gathering requirements and studing all possible risks or opportunities that you may have.</p>
+			</div>
+			<div class="col-md-3 text-center">
+				<a href="#service" class="icon"><i class="fa fa-code"></i></a>
+				<h2>Development</h2>
+			</div>
+			<div class="col-md-3 details">
+				<p>Web Applications development, you name the technology: it can be Ruby, PHP, Javascript, C#, or even Python. I am confortable working with any of those. Your preferred language is not in the list ? feel free to ask, I am always happy to learn new stuff.</p>
+			</div>
+		</div><!--End row (top) -->
+
+		<div class="row line visible-md visible-lg">
+			<div class="col-md-3"><span class="spot"></span></div>
+			<div class="col-md-3"><span class="spot"></span></div>
+			<div class="col-md-3"><span class="spot"></span></div>
+			<div class="col-md-3"><span class="spot"></span></div>
+		</div><!--End row -->
+
+		<div class="row services bottom-row scrollimation fade-right">
+			<div class="col-md-3 text-center col-md-push-3">
+				<h2>Design</h2>
+				<a href="#service" class="icon"><i class="fa fa-pencil"></i></a>
+			</div>
+			<div class="col-md-3 details col-md-pull-3">
+				<p>Looking to make the best visual impact on your clients ? Look no further, not that I am also a visual designer but I work with the bests in the market and take full responsibility for the quality of their work.</p>
+			</div>
+			<div class="col-md-3 text-center  col-md-push-3">
+				<h2>Maintenance</h2>
+				<a href="#service" class="icon"><i class="fa fa-rocket"></i></a>
+			</div>
+			<div class="col-md-3 details  col-md-pull-3">
+				<p>Don't worry about anything on getting your idea into life. If you also need a place where to host your product I can provide it too. Also if you have any after-going-live problems or feature requests I am always there to help.</p>
+			</div>
+		</div><!--End row (bottom)-->
+
+	</div><!--End container -->
+
+</section><!--End services section-->
+
+<!-- ==============================================
+ABOUT
+=============================================== -->
+<section id="about">
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-1 scrollimation fade-right">
+				<img class="img-responsive img-circle img-center" src="/images/avatar.jpg" alt="">
+			</div>
+			<div class="col-sm-6 col-sm-offset-1 scrollimation fade-left">
+				<h1>Hello, I am Gonzalo...</h1>
+				<p>I'm a web programmer analyst living in <a href="https://goo.gl/s8ZOXU" target="_blank">Montevideo, Uruguay</a>. I have worked with companies like <a href="http://www.netsuite.com">Netsuite</a>, <a href="http://www.moove-it.com">Moove-it</a>, <a href="http://www.globant.com">Globant</a> and currently working as a senior ruby developer at <a href="http://www.tarmac.io">Tarmac</a>.<br/>Programming is not just a job for me, it's a passion. </p>
+				<a href="#portfolio" class="btn btn-theme transparent scrollto">View my Works</a>
+			</div>
+		</div><!--End row -->
+
+	</div><!--End container -->
+
+</section><!--End about section -->
+
+<!-- ==============================================
+SKILLS
+=============================================== -->
+<section id="skills">
+
+	<div class="container">
+
+		<div class="row skills">
+
+			<div class="col-sm-6 col-md-3 text-center">
+				<span class="chart" data-percent="80"><span class="percent">80</span></span>
+				<h2 class="text-center">Ruby / Rails</h2>
+			</div>
+			<div class="col-sm-6 col-md-3 text-center">
+				<span class="chart" data-percent="70"><span class="percent">70</span></span>
+				<h2 class="text-center">HTML / CSS</h2>
+			</div>
+			<div class="col-sm-6 col-md-3 text-center">
+				<span class="chart" data-percent="60"><span class="percent">60</span></span>
+				<h2 class="text-center">Javascript</h2>
+			</div>
+			<div class="col-sm-6 col-md-3 text-center">
+				<span class="chart" data-percent="90"><span class="percent">90</span></span>
+				<h2 class="text-center">UI / UX</h2>
+			</div>
+
+		</div><!--End row -->
+
+	</div><!--End container -->
+
+</section><!--End skills section -->
+
+<!-- ==============================================
+PORTFOLIO
+=============================================== -->
+<section  id="portfolio">
+
+	<div id="portfolio-header" class="text-center">
+
+		<h1 class="section-title scrollimation scale-in">The <span>works</span> I am proud of<i class="fa fa-pencil"></i></h1>
+
+		<!--==== Portfolio Filters ====-->
+		<div id="filter-works">
+			<ul>
+				<li class="active">
+					<a href="#" data-filter="*">All</a>
+				</li>
+				<li>
+					<a href="#" data-filter=".web-design">Web Design</a>
+				</li>
+				<li>
+					<a href="#" data-filter=".icons">Icons</a>
+				</li>
+				<li>
+					<a href="#" data-filter=".ui-kits">UI Kits</a>
+				</li>
+			</ul>
+		</div><!--End portfolio filters -->
+
+	</div><!--End portfolio header -->
+
+	<div class="container masonry-wrapper scrollimation fade-in">
+
+		<div id="projects-container">
+
+			{% for post in site.posts %}
+			<a class="project-item web-design" href="{{post.work_url}}" data-images="{{post.project_slides}}">
+
+				<img class="img-responsive project-image" src="{{post.project_thumb}}"  alt=""><!--Project thumb -->
+
+				<div class="hover-mask">
+					<h2 class="project-title">{{post.title}}</h2><!--Project Title -->
+					<p>{{post.subtitle}}</p><!--Project Subtitle -->
+				</div>
+
+				<!--==== Project Preview HTML ====-->
+
+				<div class="sr-only project-description">
+					{{post.content}}
+				</div>
+
+			</a>
+			{% endfor %}
+
+		</div><!-- End projects -->
+
+	</div><!-- End container -->
+
+	<!-- ==============================================
+	PROJECT PREVIEW MODAL
+	=============================================== -->
+	<div id="project-modal" class="modal fade">
+
+		<div class="modal-dialog">
+
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+
+				<div class="modal-body">
+
+					<div class="left-col">
+						<img class="img-responsive" src="/images/imac.png" alt="">
+						<div class="loader"></div>
+						<div class="image-wrapper"></div>
+					</div>
+
+					<h1></h1>
+
+					<div class="project-descr"></div>
+
+					<div class="clearfix"></div>
+
+					<p class="text-center"><a class="btn btn-theme"><i class="fa fa-external-link"></i>Visit Website</a></p>
+
+				</div><!-- End modal-body -->
+
+			</div><!-- End modal-content -->
+
+		</div><!-- End modal-dialog -->
+
+	</div><!-- End modal -->
+
+</section><!-- End portfolio section -->
+
+<!-- ==============================================
+TWITTER FEED
+=============================================== -->
+<section id="twitter">
+	<div class="container">
+		<div class="row scrollimation fade-in">
+			<div class="col-sm-1 twitter-icon">
+				<i class="fa fa-twitter"></i>
+			</div>
+			<div class="col-sm-11">
+				<div id="twitter-slider" class="flexslider" data-widget-id="601269784655896576" data-tweets-length="3">
+				</div>
+			</div>
+		</div><!-- End row -->
+	</div><!-- End container -->
+
+</section><!-- End Twitter section -->
+
+<!-- ==============================================
+CONTACT
+=============================================== -->
+<section  id="contact">
+
+	<div class="container">
+
+		<h1 class="section-title scrollimation scale-in">Keep in <span>Touch</span> with me</h1>
+
+		<div class="row">
+
+			<div class="col-sm-5 contact-info scrollimation fade-right">
+
+				<p>Feel like getting in touch ? Do not hesitate to fill the form to the right and I will be responding back as soon as possible!</p>
+
+				<ul class="socials">
+					<li><a href="https://twitter.com/gonzalorobaina"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="https://www.facebook.com/GonzaloRobaina"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="https://uy.linkedin.com/in/gonzalorobaina"><i class="fa fa-linkedin"></i></a></li>
+					<li><a href="https://plus.google.com/+GonzaloRobaina"><i class="fa fa-google-plus"></i></a></li>
+				</ul>
+
+			</div>
+
+			<form id="contact-form" class="col-sm-7 scrollimation fade-left" action="//formspree.io/gonzalo@robaina.me" method="post" novalidate>
+
+				<div class="form-group">
+				  <label class="control-label" for="contact-name">Name</label>
+				  <div class="controls">
+					<i class="fa fa-user"></i>
+					<input id="contact-name" name="contactName" placeholder="My name is..." class="form-control input-lg requiredField" type="text" data-error-empty="Please enter your name">
+				  </div>
+				</div><!-- End name input -->
+
+				<div class="form-group">
+				  <label class="control-label" for="contact-mail">Email</label>
+				  <div class=" controls">
+					<i class="fa fa-envelope"></i>
+					<input id="contact-mail" name="email" placeholder="Please respond at..." class="form-control input-lg requiredField" type="email" data-error-empty="Please enter your email" data-error-invalid="Invalid email address">
+				  </div>
+				</div><!-- End email input -->
+
+				<div class="form-group">
+				  <label class="control-label" for="contact-message">Message</label>
+					<div class="controls">
+						<i class="fa fa-comment"></i>
+						<textarea id="contact-message" name="comments"  placeholder="I wanna talk about..." class="form-control input-lg requiredField" rows="5" data-error-empty="Please enter your message"></textarea>
+					</div>
+				</div><!-- End textarea -->
+
+				<p><button name="submit" type="submit" class="btn btn-theme btn-lg" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent"><i class="fa fa-paper-plane"></i>Send Message</button></p>
+				<input type="hidden" name="submitted" id="submitted" value="true" />
+
+			</form><!-- End contact-form -->
+
+		</div><!-- End row -->
+
+	</div><!-- End container -->
+
+</section><!-- End contact section -->
