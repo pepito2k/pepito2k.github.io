@@ -2,7 +2,7 @@
 title:  "Búsquedas IT"
 subtitle: "busquedasit.com"
 date:   2014-04-23 20:33:31
-tags: design development
+tag: backend
 work_url: "http://www.busquedasit.com"
 project_thumb: "/images/projects/busquedasit/project-thumb.jpg"
 project_slides: "/images/projects/busquedasit/project-slide.jpg,/images/projects/busquedasit/project-slide2.jpg"

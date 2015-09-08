@@ -2,7 +2,7 @@
 title:  "Martín Delgado Catering"
 subtitle: "martindelgadocatering.com.uy"
 date:   2014-09-15 20:33:31
-tags: design development
+tag: 'web-design backend'
 work_url: "http://www.martindelgadocatering.com.uy"
 project_thumb: "/images/projects/mdc/project-thumb.jpg"
 project_slides: "/images/projects/mdc/project-slide.jpg,/images/projects/mdc/project-slide2.jpg,/images/projects/mdc/project-slide3.jpg"

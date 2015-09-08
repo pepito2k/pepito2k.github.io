@@ -1,8 +1,5 @@
 ---
 layout: default
-title: Latest Posts
-description: "Describe this nonsense."
-tags: [Jekyll, theme, themes, responsive, blog, modern]
 ---
 
 <!--=== PAGE PRELOADER ===-->
@@ -22,7 +19,6 @@ MAIN NAV
 
 			<!-- ======= LOGO ========-->
 			<a class="navbar-brand scrollto" href="#home">{{ site.title }}<br><span>{{ site.description }}</span></a>
-			<!-- <a class="navbar-brand scrollto ir-logo" href="#">{{ site.title }}<br><span>{{ site.description }}</span></a> -->
 
 		</div>
 
@@ -210,10 +206,10 @@ PORTFOLIO
 					<a href="#" data-filter=".web-design">Web Design</a>
 				</li>
 				<li>
-					<a href="#" data-filter=".icons">Icons</a>
+					<a href="#" data-filter=".backend">Backend</a>
 				</li>
 				<li>
-					<a href="#" data-filter=".ui-kits">UI Kits</a>
+					<a href="#" data-filter=".e-commerce">E-Commerce</a>
 				</li>
 			</ul>
 		</div><!--End portfolio filters -->
@@ -225,7 +221,7 @@ PORTFOLIO
 		<div id="projects-container">
 
 			{% for post in site.posts %}
-			<a class="project-item web-design" href="{{post.work_url}}" data-images="{{post.project_slides}}">
+			<a class="project-item {{post.tag}}" href="{{post.work_url}}" data-images="{{post.project_slides}}">
 
 				<img class="img-responsive project-image" src="{{post.project_thumb}}"  alt=""><!--Project thumb -->
 
