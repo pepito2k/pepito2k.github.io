@@ -1,0 +1,49 @@
+---
+layout: default
+background: 'assets/images/bg-portfolio.jpg'
+---
+
+<!-- Page content-->
+<section class="module">
+    <div class="container-fluid container-custom">
+        <!-- Page title-->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-header">
+                    <h1>Latest Works & Projects.</h1>
+                    <p>This is a small showcase of some of the works I've done in the past.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Page title end-->
+        <!-- Portfolio filter-->
+        <div class="row">
+            <div class="col-sm-12">
+                <ul class="filters" id="filters">
+                    <li><a class="current" href="#" data-filter="*">Show All</a></li>
+                    <li><a href="#" data-filter=".web-design">Web Design</a></li>
+                    <li><a href="#" data-filter=".backend">Backend</a></li>
+                    <li><a href="#" data-filter=".e-commerce">E-commerce</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Portfolio filter end-->
+        <!-- Portfolio-->
+        <div class="row-portfolio">
+            {% for product in site.portfolio %}
+            <!-- Portfolio image-->
+            <div class="portfolio-item {{ product.tag }}">
+                <div class="portfolio-wrapper"><img src="{{ product.thumb }}" alt="">
+                    <div class="portfolio-overlay"></div>
+                    <div class="portfolio-caption">
+                        <h6 class="portfolio-title">{{ product.title }}</h6><span class="portfolio-subtitle">{{ product.subtitle }}</span>
+                    </div>
+                </div><a class="portfolio-link lightbox" href="{{ product.screenshot }}"></a>
+            </div>
+            <!-- Portfolio image end-->
+            {% endfor %}
+        </div>
+        <!-- Portfolio end-->
+    </div>
+</section>
+<!-- Page content-->

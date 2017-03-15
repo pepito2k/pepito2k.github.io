@@ -1,0 +1,97 @@
+---
+layout: default
+background: 'assets/images/bg-resume.jpg'
+---
+
+<!-- Page title-->
+<section class="module">
+    <div class="container-fluid container-custom">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Education & Work Experience.</h1>
+                <p>Take a look at my formal education and work experience.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Page title end-->
+<!-- Work Experience-->
+<section class="module">
+    <div class="container-fluid container-custom">
+        <div class="row">
+            <div class="col-sm-4">
+                <h6>Work Experience.</h6>
+            </div>
+            <div class="col-sm-8">
+                <ul class="resume-info">
+                  {% assign sorted_positions = site.work | reverse %}
+                  {% for position in sorted_positions %}
+                    <li>
+                        <h6 class="resume-title">{{ position.title }}</h6>
+                        <h6 class="resume-meta">{{ position.meta }}</h6>
+                        <p>{{ position.content }}</p>
+                    </li>
+                  {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Work Experience end-->
+<!-- Language Skills-->
+<section class="module">
+    <div class="container-fluid container-custom">
+        <div class="row">
+            <div class="col-sm-4">
+                <h6>Language Skills.</h6>
+            </div>
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="pie-chart">
+                            <div class="chart" data-percent="100">
+                                <div class="chart-text">100</div>
+                            </div>
+                            <div class="chart-title">
+                                <h6>Spanish</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="pie-chart">
+                            <div class="chart" data-percent="80">
+                                <div class="chart-text">80</div>
+                            </div>
+                            <div class="chart-title">
+                                <h6>English</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Language Skills end-->
+<!-- Education-->
+<section class="module">
+    <div class="container-fluid container-custom">
+        <div class="row">
+            <div class="col-sm-4">
+                <h6>Education.</h6>
+            </div>
+            <div class="col-sm-8">
+                <ul class="resume-info">
+                    {% for education in site.study %}
+                    <li>
+                        <h6 class="resume-title">{{ education.title }}</h6>
+                        <h6 class="resume-meta">{{ education.meta }}</h6>
+                        <p>{{ education.content }}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Education end-->

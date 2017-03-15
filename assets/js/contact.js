@@ -1,62 +1,52 @@
-$(document).ready(function() {
-	$('#contact-form').submit(function() {
-		if ($('#contact-form').hasClass('clicked')) {
-			return false;
-		}
+(function($){
 
-		$('#contact-form').addClass('clicked');
+	$(document).ready(function() {
 
-		var buttonWidth = $('#contact-form button').width();
+		/* ---------------------------------------------- /*
+		 * Contact form ajax
+		/* ---------------------------------------------- */
 
-		var buttonCopy   = $('#contact-form button').html(),
-			errorMessage   = $('#contact-form button').data('error-message'),
-			sendingMessage = $('#contact-form button').data('sending-message'),
-			okMessage      = $('#contact-form button').data('ok-message'),
-			hasError       = false;
+		$('#contact-form').find('input,textarea').jqBootstrapValidation({
+			preventSubmit: true,
+			submitError: function($form, event, errors) {
+				// additional error messages or events
+			},
+			submitSuccess: function($form, event) {
+				event.preventDefault();
 
-		$('#contact-form button').width(buttonWidth);
-		$('#contact-form .error-message').remove();
+				var submit          = $('#contact-form .submit');
+				var ajaxResponse    = $('#contact-response');
 
-		$('.requiredField').each(function() {
-			if ($.trim($(this).val()) === '') {
-				var errorText = $(this).data('error-empty');
-				$(this).parent().append('<span class="error-message">' + errorText + '.</span>');
-				$(this).addClass('inputError');
-				hasError = true;
-			} else if ($(this).is("input[type='email']") || $(this).attr('name') === 'email') {
-				var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-				if (!emailReg.test($.trim($(this).val()))) {
-					var invalidEmail = $(this).data('error-invalid');
-					$(this).parent().append('<span class="error-message">' + invalidEmail + '.</span>');
-					$(this).addClass('inputError');
-					hasError = true;
-				}
+				var name            = $('#contact-form [name="name"]').val();
+				var email           = $('#contact-form [name="email"]').val();
+				var message         = $('#contact-form [name="message"]').val();
+
+				$.ajax({
+					type: 'POST',
+					url: '//formspree.io/gonzalo@robaina.me',
+					dataType: 'json',
+					data: {
+						name: name,
+						email: email,
+						message: message,
+					},
+					cache: false,
+					beforeSend: function(result) {
+						submit.empty();
+						submit.append('<i class="fa fa-cog fa-spin"></i> Wait...');
+					},
+					success: function(result) {
+						if(result.sendstatus == 1) {
+							ajaxResponse.html(result.message);
+							$form.fadeOut(500);
+						} else {
+							ajaxResponse.html(result.message);
+						}
+					}
+				});
 			}
 		});
 
-		if (hasError) {
-			$('#contact-form button').html('<i class="fa fa-remove"></i>' + errorMessage);
-			setTimeout(function() {
-				$('#contact-form button').html(buttonCopy);
-				$('#contact-form button').width('auto');
-				$('#contact-form').removeClass('clicked');
-			}, 2000);
-		} else {
-			$('#contact-form button').html('<i class="fa fa-refresh fa-spin"></i>' + sendingMessage);
-
-			var formInput = $(this).serialize();
-			$.post($(this).attr('action'), formInput, function(data) {
-				$('#contact-form button').html('<i class="fa fa-check"></i>' + okMessage);
-				$('#contact-form')[0].reset();
-				setTimeout(function() {
-					$('#contact-form button').html(buttonCopy);
-					$('#contact-form button').width('auto');
-					$('#contact-form').removeClass('clicked');
-				}, 2000);
-
-			}, 'json');
-		}
-
-		return false;
 	});
-});
+
+})(jQuery);

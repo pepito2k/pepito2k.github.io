@@ -1,10 +1,14 @@
-title:            GONZA ROBAINA
-description:      Web Developer
-disqus_shortname: gonzalorobaina
-# Your site's domain goes here. When working locally use localhost server leave blank
-# PS. If you set this wrong stylesheets and scripts won't load and most links will break.
-# PPS. If you leave it blank for local testing home links won't work, they'll be fine for live domains though.
-url:              http://localhost:4000
+gems: [jekyll-paginate]
+
+title: Gonzalo Robaina
+
+paginate: 3
+paginate_path: "/blog/page:num/"
+
+collections:
+  - work
+  - study
+  - portfolio
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/Montevideo
