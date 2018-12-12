@@ -1,6 +1,6 @@
 ---
 title: Contributing to Open Source projects
-tags: OpenSource Ruby Gem
+tags: OpenSource Ruby Gem Community
 image: /assets/images/blog/contributting-open-source-projects.jpg
 layout: posts
 ---
