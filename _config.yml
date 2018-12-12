@@ -1,4 +1,8 @@
-gems: [jekyll-paginate]
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+url: "http://gonza.uy"
 
 title: Gonza Robaina
 
