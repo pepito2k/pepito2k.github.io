@@ -10,10 +10,11 @@
     <meta name="author" content="Gonza Robaina" />
     <title>Gonza Robaina</title>
 
-    <link rel="icon" href="favicon.png">
+    <link rel="icon" href="favicon.ico">
 
     <link rel="canonical" href="http://gonza.uy" />
 
+    <!-- Load custom Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
@@ -28,13 +29,11 @@
       gtag('config', 'UA-129786-12');
     </script>
 
-    <!-- Bootstrap core CSS -->
-    <!-- CSS and icons -->
+    <!-- Twitter Bootstrap CSS and icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
   </head>
   <body>
     <div class="container-fluid p-0 d-flex flex-column justify-content-between">
@@ -54,6 +53,8 @@
       </header>
       <main class="d-flex justify-content-center">
         <picture class="d-flex justify-content-center">
+          <source media="(prefers-color-scheme: dark) and (max-width:800px)" srcset="gonza-dark-m.svg">
+          <source media="(prefers-color-scheme: dark)" srcset="gonza-dark.svg">
           <source media="(max-width:800px)" srcset="gonza-m.svg" type="image/svg+xml">
           <img src="gonza.svg" alt="Gonza Robaina" class="w-50" />
         </picture>
