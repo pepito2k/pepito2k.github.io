@@ -29,6 +29,16 @@
       gtag('config', 'UA-129786-12');
     </script>
 
+    <!-- Trianglify background generator -->
+    <script src='https://unpkg.com/trianglify@^4/dist/trianglify.bundle.js'></script>
+    <script>
+      const pattern = trianglify({
+        width: window.innerWidth,
+        height: window.innerHeight,
+        xColors: ["#ffffff","#f0f0f0","#d9d9d9","#bdbdbd","#969696","#737373","#525252","#323232"]
+      })
+    </script>
+
     <!-- Twitter Bootstrap CSS and icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -66,5 +76,8 @@
         </p>
       </footer>
     </div>
+    <script>
+      document.body.getElementsByTagName("main")[0].appendChild(pattern.toCanvas())
+    </script>
   </body>
 </html>
