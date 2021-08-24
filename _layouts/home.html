@@ -34,7 +34,7 @@
     <script>
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         // dark mode
-        colors = ["#000000","#0f0f0f","#262626","#424242","#696969","#8C8C8C","#ADADAD","#CDCDCD"]
+        colors = ["#000000","#0f0f0f","#262626","#424242","#696969","#8C8C8C","#ADADAD","#CDCDCD"];
       } else {
         colors = ["#ffffff","#f0f0f0","#d9d9d9","#bdbdbd","#969696","#737373","#525252","#323232"];
       }
@@ -65,14 +65,17 @@
               <i class="bi bi-github"></i>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="blog.html" class="nav-link">Blog</a>
+          </li>
         </ul>
       </header>
       <main class="d-flex justify-content-center">
         <picture class="d-flex justify-content-center">
-          <source media="(prefers-color-scheme: dark) and (max-width:800px)" srcset="gonza-dark-m.svg">
-          <source media="(prefers-color-scheme: dark)" srcset="gonza-dark.svg">
-          <source media="(max-width:800px)" srcset="gonza-m.svg" type="image/svg+xml">
-          <img src="gonza.svg" alt="Gonza Robaina" class="w-50" />
+          <source media="(prefers-color-scheme: dark) and (max-width:800px)" srcset="/assets/gonza-dark-m.svg">
+          <source media="(prefers-color-scheme: dark)" srcset="/assets/gonza-dark.svg">
+          <source media="(max-width:800px)" srcset="/assets/gonza-m.svg" type="image/svg+xml">
+          <img src="/assets/gonza.svg" alt="Gonza Robaina" class="w-50" />
         </picture>
       </main>
       <footer class="d-flex justify-content-center align-items-center">
@@ -83,7 +86,10 @@
       </footer>
     </div>
     <script>
-      document.body.getElementsByTagName("main")[0].appendChild(pattern.toCanvas())
+      var m = new XMLSerializer().serializeToString(pattern.toSVG());
+      var k = window.btoa(m);
+      var element = document.getElementsByTagName("main")[0];
+      element.style['background-image'] = 'url("data:image/svg+xml;base64,' + k + '")';
     </script>
   </body>
 </html>
