@@ -31,19 +31,7 @@
 
     <!-- Trianglify background generator -->
     <script src='https://unpkg.com/trianglify@^4/dist/trianglify.bundle.js'></script>
-    <script>
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        // dark mode
-        colors = ["#000000","#0f0f0f","#262626","#424242","#696969","#8C8C8C","#ADADAD","#CDCDCD"];
-      } else {
-        colors = ["#ffffff","#f0f0f0","#d9d9d9","#bdbdbd","#969696","#737373","#525252","#323232"];
-      }
-      const pattern = trianglify({
-        width: window.innerWidth,
-        height: window.innerHeight,
-        xColors: colors
-      })
-    </script>
+    <script src="/scripts.js" defer></script>
 
     <!-- Twitter Bootstrap CSS and icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -85,11 +73,5 @@
         </p>
       </footer>
     </div>
-    <script>
-      var m = new XMLSerializer().serializeToString(pattern.toSVG());
-      var k = window.btoa(m);
-      var element = document.getElementsByTagName("main")[0];
-      element.style['background-image'] = 'url("data:image/svg+xml;base64,' + k + '")';
-    </script>
   </body>
 </html>
