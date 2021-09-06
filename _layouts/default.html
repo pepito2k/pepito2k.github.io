@@ -1,70 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="Average Web and Mobile Applications Developer" />
-    <meta name="author" content="Gonza Robaina" />
-    <title>{{ page.title }}</title>
-
-    <link rel="icon" href="/favicon.ico">
-
-    <link rel="canonical" href="http://gonza.uy" />
-
-    <!-- Load custom Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-	  
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129786-12"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-129786-12');
-    </script>
-
-    <!-- Trianglify background generator -->
-    <script src='https://unpkg.com/trianglify@^4/dist/trianglify.bundle.js'></script>
-    <script src="/scripts.js" defer></script>
-
-    <!-- Twitter Bootstrap CSS and icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
-    <link href="/styles.css" rel="stylesheet" />
-  </head>
+  {% include head.html %}
   <body>
     <div class="container-fluid p-0 d-flex flex-column justify-content-between">
-      <header class="p-4">
-        <nav class="navbar navbar-light">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="/">
-              <img src="/assets/gonza-dark.svg" alt="" height="64">
-            </a>
-            <ul class="nav">
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.linkedin.com/in/gonzalorobaina">
-                  <i class="bi bi-linkedin"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://github.com/pepito2k">
-                  <i class="bi bi-github"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/" class="nav-link">Home</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
+      {% include header.html %}
       <main class="d-flex flex-column">
         <section class="title d-flex justify-content-center align-items-end">
           <h1>{{ page.title }}</h1>
@@ -73,12 +12,7 @@
           {{ content }}
         </div>
       </main>
-      <footer class="d-flex justify-content-center align-items-center">
-        <p class="m-0 text-wrap text-center px-5 py-2">
-          Average Web Applications Developer.
-          <a href="mailto:gonzalor@gmail.com" class="btn btn-light">Get in touch</a>
-        </p>
-      </footer>
+      {% include footer.html %}
     </div>
   </body>
 </html>

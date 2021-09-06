@@ -1,0 +1,35 @@
+<header class="p-2 p-md-4 d-flex align-items-center">
+  <nav class="navbar navbar-light">
+    <div class="container-fluid d-flex justify-content-between">
+      {% unless page.layout == "home" %}
+      <a class="navbar-brand" href="/">
+        <picture class="d-flex justify-content-center" height="64">
+          <source media="(max-width:800px)" srcset="/assets/gonza-dark-m.svg" type="image/svg+xml">
+          <img src="/assets/gonza-dark.svg" alt="Gonza Robaina" height="64" />
+        </picture>
+      </a>
+      {% endunless %}
+      <ul class="nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.linkedin.com/in/gonzalorobaina">
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pepito2k">
+            <i class="bi bi-github"></i>
+          </a>
+        </li>
+        {% if page.layout == "home" %}
+        <li class="nav-item">
+          <a href="/blog.html" class="nav-link">Blog</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a href="/" class="nav-link">Home</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+</header>

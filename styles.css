@@ -44,6 +44,10 @@ header {
   flex: 1;
 }
 
+.navbar {
+  flex: 1;
+}
+
 main {
   background-size: cover;
   flex: 10;
